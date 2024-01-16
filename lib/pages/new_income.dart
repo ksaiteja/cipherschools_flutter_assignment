@@ -127,7 +127,7 @@ class _NewIncomePageState extends State<NewIncomePage> {
                           topRight: Radius.circular(30))),
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       Container(
@@ -163,7 +163,7 @@ class _NewIncomePageState extends State<NewIncomePage> {
                         hintText: 'Description',
                         isPassword: false,
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Container(
                         width: double.maxFinite,
                         height: 56,
@@ -210,7 +210,7 @@ class _NewIncomePageState extends State<NewIncomePage> {
                                 ),
                               ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 50,
                       )
                     ],

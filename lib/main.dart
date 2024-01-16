@@ -1,8 +1,10 @@
 import 'package:cipherschools_flutter_assignment/firebase_options.dart';
+import 'package:cipherschools_flutter_assignment/pages/analysis_page.dart';
 import 'package:cipherschools_flutter_assignment/pages/home_page.dart';
 import 'package:cipherschools_flutter_assignment/pages/new_expense.dart';
 import 'package:cipherschools_flutter_assignment/pages/new_income.dart';
 import 'package:cipherschools_flutter_assignment/pages/profile_page.dart';
+import 'package:cipherschools_flutter_assignment/pages/seeAll_transactions_page.dart';
 import 'package:cipherschools_flutter_assignment/pages/starting_page.dart';
 import 'package:cipherschools_flutter_assignment/providers/user_provider.dart';
 import 'package:cipherschools_flutter_assignment/utils/color_constants.dart';
@@ -73,8 +75,8 @@ class _MyHomePageState extends State<MyHomePage> {
   var isExpanded = false;
   final List<Widget> _contentShown = [
     const Home(),
-    const Text("Transactions"),
-    const Text("Budget"),
+    const SeeAllTransactionsPage(),
+    AnalysisPage(),
     const ProfilePage(),
   ];
 

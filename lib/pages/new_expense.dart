@@ -127,7 +127,7 @@ class _NewExpensePageState extends State<NewExpensePage> {
                           topRight: Radius.circular(30))),
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       Container(
@@ -163,7 +163,7 @@ class _NewExpensePageState extends State<NewExpensePage> {
                         hintText: 'Description',
                         isPassword: false,
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Container(
                         width: double.maxFinite,
                         height: 56,
@@ -210,7 +210,7 @@ class _NewExpensePageState extends State<NewExpensePage> {
                                 ),
                               ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 50,
                       )
                     ],

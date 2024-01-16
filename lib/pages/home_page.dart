@@ -55,8 +55,8 @@ class _HomeState extends State<Home> {
               context: context,
               removeTop: true,
               removeBottom: true,
-              child: SizedBox(
-                height: height * 0.4,
+              child: Expanded(
+                // height: height * 0.4,
                 child: TransactionListWidget(
                   range: range,
                 ),
@@ -452,6 +452,9 @@ class MainContainer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 50,
+            ),
             const TopNavigation(),
             const SizedBox(
               height: 5,
@@ -574,100 +577,98 @@ class _MyTabBarState extends State<MyTabBar> {
   String range = "Today";
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          InkWell(
-            splashColor: Colors.transparent,
-            onTap: () {
-              widget.onChange("Today");
-              setState(() {
-                range = "Today";
-              });
-            },
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-              decoration: range == "Today"
-                  ? BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.orange.shade100)
-                  : const BoxDecoration(),
-              child: Text(
-                'Today',
-                style: TextStyle(
-                    color: range == "Today" ? Colors.orange : Colors.black),
-              ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        InkWell(
+          splashColor: Colors.transparent,
+          onTap: () {
+            widget.onChange("Today");
+            setState(() {
+              range = "Today";
+            });
+          },
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+            decoration: range == "Today"
+                ? BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.orange.shade100)
+                : const BoxDecoration(),
+            child: Text(
+              'Today',
+              style: TextStyle(
+                  color: range == "Today" ? Colors.orange : Colors.black),
             ),
           ),
-          InkWell(
-            splashColor: Colors.transparent,
-            onTap: () {
-              widget.onChange("Week");
-              setState(() {
-                range = "Week";
-              });
-            },
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-              decoration: range == "Week"
-                  ? BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.orange.shade100)
-                  : const BoxDecoration(),
-              child: Text(
-                'Week',
-                style: TextStyle(
-                    color: range == "Week" ? Colors.orange : Colors.black),
-              ),
+        ),
+        InkWell(
+          splashColor: Colors.transparent,
+          onTap: () {
+            widget.onChange("Week");
+            setState(() {
+              range = "Week";
+            });
+          },
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+            decoration: range == "Week"
+                ? BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.orange.shade100)
+                : const BoxDecoration(),
+            child: Text(
+              'Week',
+              style: TextStyle(
+                  color: range == "Week" ? Colors.orange : Colors.black),
             ),
           ),
-          InkWell(
-            splashColor: Colors.transparent,
-            onTap: () {
-              widget.onChange("Month");
-              setState(() {
-                range = "Month";
-              });
-            },
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-              decoration: range == "Month"
-                  ? BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.orange.shade100)
-                  : const BoxDecoration(),
-              child: Text(
-                'Month',
-                style: TextStyle(
-                    color: range == "Month" ? Colors.orange : Colors.black),
-              ),
+        ),
+        InkWell(
+          splashColor: Colors.transparent,
+          onTap: () {
+            widget.onChange("Month");
+            setState(() {
+              range = "Month";
+            });
+          },
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+            decoration: range == "Month"
+                ? BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.orange.shade100)
+                : const BoxDecoration(),
+            child: Text(
+              'Month',
+              style: TextStyle(
+                  color: range == "Month" ? Colors.orange : Colors.black),
             ),
           ),
-          InkWell(
-            onTap: () {
-              widget.onChange("Year");
-              setState(() {
-                range = "Year";
-              });
-            },
-            splashColor: Colors.transparent,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-              decoration: range == "Year"
-                  ? BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.orange.shade100)
-                  : const BoxDecoration(),
-              child: Text(
-                'Year',
-                style: TextStyle(
-                    color: range == "Year" ? Colors.orange : Colors.black),
-              ),
+        ),
+        InkWell(
+          onTap: () {
+            widget.onChange("Year");
+            setState(() {
+              range = "Year";
+            });
+          },
+          splashColor: Colors.transparent,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+            decoration: range == "Year"
+                ? BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.orange.shade100)
+                : const BoxDecoration(),
+            child: Text(
+              'Year',
+              style: TextStyle(
+                  color: range == "Year" ? Colors.orange : Colors.black),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -700,7 +701,6 @@ class _TopNavigationState extends State<TopNavigation> {
     return Consumer2<TransactionProvider, UserProvider>(
         builder: (context, transactionProvider, userProvider, child) {
       return Container(
-        margin: const EdgeInsets.only(top: 50),
         padding: const EdgeInsets.only(left: 16, top: 8, right: 16, bottom: 8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

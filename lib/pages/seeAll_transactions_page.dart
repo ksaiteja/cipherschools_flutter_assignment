@@ -39,8 +39,8 @@ class _SeeAllTransactionsPageState extends State<SeeAllTransactionsPage> {
             const SizedBox(
               height: 10,
             ),
-            SizedBox(
-                height: height * 0.7,
+            Flexible(
+                // height: height * 0.7,
                 child: TransactionListWidget(range: range))
           ],
         ),
