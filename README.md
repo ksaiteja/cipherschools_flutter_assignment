@@ -3,6 +3,9 @@
 - Send it to your mobile phone (android).
 - Install the apk, and now you can use the app.
 
+## Apk Drive link ##
+https://drive.google.com/file/d/1GJHj7cd-3uaJrek0_iv1rGv1uf4mVzsG/view?usp=sharing
+
 ## App Features ##
 
 - **Intuitive and User-Friendly Interface:** The app boasts a user-friendly UI and UX design, ensuring a seamless and enjoyable experience for users.
